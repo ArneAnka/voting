@@ -16,5 +16,5 @@ require('./bootstrap');
 Vue.component('game-voting', require('./components/GameVoting.vue'));
 
 const app = new Vue({
-    el: '#app'
+    el: 'body'
 });
