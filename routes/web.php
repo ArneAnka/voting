@@ -35,7 +35,8 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::post('/m/{game}/comment/{id}/edit', 'CommentController@editStore');
 	Route::get('/m/{game}/comment/{id}/delete', 'CommentController@delete');
 
-		// Likes //	
+		// Votes //	
+	Route::get('/m/{game}/votes', 'GameVoteController@show'); //14:27
 	Route::post('m/{game}/comment/{id}/upvote', 'CommentController@upvote');
 	Route::post('m/{game}/comment/{id}/downvote', 'CommentController@downvote');
 

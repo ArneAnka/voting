@@ -11,8 +11,8 @@ class GameController extends Controller
     	$query = $request->get('q');
     	
     	$games = $query 
-    	? Game::with('votes')->serach($query)->get()
-    	: Game::with('votes')->get();
+    	? Game::serach($query)->get()
+    	: Game::all();
 
     	return view('l.list', compact('games'));
 	}
