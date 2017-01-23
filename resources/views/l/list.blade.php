@@ -7,6 +7,8 @@
 	<h1>All</h1>
 @endif
 
+	<game-list games-list="{{ $games }}"></game-list>
+
 	@if($games->count())
 		@foreach($games as $game)
 			<div class="game" style="margin-bottom: 10px">

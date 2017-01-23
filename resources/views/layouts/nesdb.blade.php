@@ -18,8 +18,10 @@
     </script>
 </head>
 <body>
-		@include('l._menu')
-		@yield('content')
+<div id="app">
+	@include('l._menu')
+	@yield('content')
+</div>
 <!-- Scripts -->
 <script src="/js/app.js"></script>
 </body>

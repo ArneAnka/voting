@@ -6,6 +6,8 @@
 			margin-left: 20px;
 			border-left: solid 1px;
 			padding-left: 5px;
+			background: #f9f9f7;
+			margin-bottom: 5px;
 		}
 	</style>
 
