@@ -1,7 +1,7 @@
 <template>
     <div class="game__voting">
-        <a href="#" class="video__voting-button">up</a> {{ up }} &nbsp;
-        <a href="#" class="video__voting-button">down</a> {{ down }} &nbsp;
+        {{ up }} <a href="#" class="game__voting-button">up</a> &nbsp;
+        {{ down }} <a href="#" class="game__voting-button">down</a> &nbsp;
         comments #
     </div>
 </template>
@@ -18,16 +18,17 @@
         },
         mounted () {
             // console.log(this.gameSlug)
+            this.getVotes()
         },
         methods: {
             getVotes () {
                 this.$http.get('/m/' + this.gameSlug + '/votes').then((response) => {
-                    this.up = response.json().data.up;
-                    this.down = response.json().data.down;
-                    this.userVote = response.json().data.user_vote;
-                    this.canVote = response.json().data.can_vote;
+                    this.up = response.data.up;
+                    this.down = response.data.down;
+                    this.userVote = response.data.user_vote;
+                    this.canVote = response.data.can_vote;
                 }, (response) => {
-                    console.log('error')
+                    // console.log('error')
                 });
             }
         },

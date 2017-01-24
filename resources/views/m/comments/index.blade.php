@@ -1,16 +1,6 @@
 @extends('layouts.nesdb')
 
 @section('content')
-	<style>
-		.comment .comment {
-			margin-left: 20px;
-			border-left: solid 1px;
-			padding-left: 5px;
-			background: #f9f9f7;
-			margin-bottom: 5px;
-		}
-	</style>
-
 	<h1>comments on {{ $game->title }}, {{$game->console }}</h1>
 
 	<form action="{{ route('top.level', $game) }}" method="post">

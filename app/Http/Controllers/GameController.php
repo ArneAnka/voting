@@ -14,7 +14,7 @@ class GameController extends Controller
     	? Game::serach($query)->get()
     	: Game::all();
 
-    	return view('l.list', compact('games'));
+    	return view('m.list', compact('games'));
 	}
 
     public function snes(Request $request){
@@ -26,7 +26,7 @@ class GameController extends Controller
     	? Game::serach($query)->console($console)->get()
     	: Game::console($console)->get();
 
-    	return view('l.list', compact('games', 'console'));
+    	return view('m.list', compact('games', 'console'));
     }
 
     public function nes(Request $request){
@@ -38,6 +38,10 @@ class GameController extends Controller
     	? Game::serach($query)->console($console)->get()
     	: Game::console($console)->get();
 
-    	return view('l.list', compact('games', 'console'));
+    	return view('m.list', compact('games', 'console'));
+    }
+
+    public function redirect(){
+        return redirect()->route('all');
     }
 }

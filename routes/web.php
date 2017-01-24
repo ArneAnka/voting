@@ -27,8 +27,14 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::post('/notes/{id}', 'NoteController@editSave');
 	Route::delete('/notes/{id}', 'NoteController@delete');
 
-		// Comments //
-	Route::get('/m/{game}', 'CommentController@index')->name('game');
+		// View items //
+	Route::get('/m/nes', 'GameController@nes')->name('nes');
+	Route::get('/m/snes', 'GameController@snes')->name('snes');
+	Route::get('/m/all', 'GameController@all')->name('all');
+	Route::get('/m/{game}', 'CommentController@index')->name('game'); // fetch game
+	Route::get('/m/{game?}', 'GameController@redirect')->name('redirect'); // if empty
+
+		// Comments game //
 	Route::post('/m/{game}/comment', 'CommentController@topLevel')->name('top.level');
 	Route::post('/m/{game}/comment/{comment}/store', 'CommentController@store')->name('comment.store');
 	Route::get('/m/{game}/comment/{id}/edit', 'CommentController@edit');
@@ -39,10 +45,5 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/m/{game}/votes', 'GameVoteController@show'); //14:27
 	Route::post('m/{game}/comment/{id}/upvote', 'CommentController@upvote');
 	Route::post('m/{game}/comment/{id}/downvote', 'CommentController@downvote');
-
-		// View items //
-	Route::get('/l/all', 'GameController@all')->name('all');
-	Route::get('/l/nes', 'GameController@nes')->name('nes');
-	Route::get('/l/snes', 'GameController@snes')->name('snes');
 
 });

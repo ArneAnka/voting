@@ -1,25 +1,24 @@
 <template>
-    <div class="game__listing">
-	    <ul id="games">
-		  <li v-for="game in games">
-		  	{{ game.title }}
-		  </li>
-	    </ul>
+    <div>
+		  <div class="game__listing" v-for="game in games">
+		  	<a :href="game.slug">{{ game.title }}</a>
+            <game-voting :game-slug="game.slug"></game-voting>
+		  </div>
     </div>
 </template>
 
 <script>
     export default {
         props: {
-            gamesList: null
+            GamesList: null
         },
         data () {
             return {
-			    games: null
+			    games: this.GamesList,
 		  }
     	},
-	    mounted() {
-	        console.log(this.gamesList);
-	    }
-}
+        mounted () {
+            // console.log(this.games)
+        },
+	}
 </script>

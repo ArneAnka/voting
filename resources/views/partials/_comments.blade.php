@@ -1,7 +1,7 @@
 @foreach($comments as $comment)
 	<div class="comment">
 		#{{$comment->id}} <strong>{{ $comment->user->name }}</strong> @if($comment->comment)
-			<i>in reply to {{$comment->comment->user->name}}</i> <a href="#">#{{$comment->parent_id}}</a>
+			<i>in reply to {{$comment->comment->user->name}}</i> <a href="{{ route('game', [$game->slug]) }}#{{ $comment->id }}">#{{$comment->parent_id}}</a>
 		@endif
 		&bull; {{ $comment->created_at->diffForHumans() }}
 		<p>{{ $comment->body }}</p>

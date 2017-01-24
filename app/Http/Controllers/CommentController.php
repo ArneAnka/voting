@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class CommentController extends Controller
 {
     public function index(Game $game){
-    	return view('comments.index', compact('game'));
+    	return view('m.comments.index', compact('game'));
     }
 
     public function store(Request $request, Game $game, Comment $comment){

@@ -7,6 +7,9 @@
 
     <title>NESDB2</title>
 
+    <!-- Styles -->
+    <link href="/css/app.css" rel="stylesheet">
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
@@ -19,7 +22,7 @@
 </head>
 <body>
 <div id="app">
-	@include('l._menu')
+	@include('partials._menu')
 	@yield('content')
 </div>
 <!-- Scripts -->
