@@ -4,9 +4,32 @@ namespace App\Http\Controllers;
 
 use App\Game;
 use Illuminate\Http\Request;
+use App\Http\Requests\CreateVoteRequest;
 
 class GameVoteController extends Controller
 {
+
+    public function create(CreateVoteRequest $request, Game $game){
+        return $this->authorize('vote', $game);
+
+        $game->voteFromUser($request->user())->delete();
+
+        $game->votes()->create([
+            'type' => $request->type,
+            'user_id' => $request->user()->id
+            ]);
+
+        return response()->json(null, 200);
+    }
+
+    public function remove(Request $request, Game $game){
+        return $this->authorize('vote', $game);
+
+        $game->voteFromUser($request->user())->delete();
+
+        return response()->json(null, 200);
+    }
+
     public function show(Request $request, Game $game){
     	$response = [
 	    	'up' => null,

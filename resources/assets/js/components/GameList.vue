@@ -1,9 +1,9 @@
-<template>
+<template> <!-- https://jsfiddle.net/zxm7oL36/ -->
     <div>
-		  <div class="game__listing" v-for="game in games">
-		  	<a :href="game.slug">{{ game.title }}</a>
-            <game-voting :game-slug="game.slug"></game-voting>
-		  </div>
+	  <div class="game__listing" v-for="game in games">
+	  	<a :href="game.slug">{{ game.title }}</a>
+        <game-voting :game-slug="game.slug"></game-voting>
+	  </div>
     </div>
 </template>
 
