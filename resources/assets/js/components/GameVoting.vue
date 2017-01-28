@@ -8,6 +8,7 @@
 
 <script>
     export default {
+        name: 'unique-name-of-my-component',
         data: function () {
             return {
                 up: null,
@@ -18,15 +19,15 @@
         },
         mounted () {
             // console.log(this.gameSlug)
-            // this.getVotes()
+            this.getVotes()
         },
         methods: {
             getVotes () {
                 this.$http.get('/m/' + this.gameSlug + '/votes').then((response) => {
-                    this.up = response.json().data.up;
-                    this.down = response.json().data.down;
-                    this.userVote = response.json().data.user_vote;
-                    this.canVote = response.json().data.can_vote;
+                    this.up = response.body.data.up;
+                    this.down = response.body.data.down;
+                    this.userVote = response.body.data.user_vote;
+                    this.canVote = response.body.data.can_vote;
                 }, (response) => {
                     // console.log('error')
                 });
