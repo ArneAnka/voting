@@ -8,7 +8,7 @@
 
 <script>
     export default {
-        data () {
+        data: function () {
             return {
                 up: null,
                 down: null,
@@ -58,7 +58,7 @@
             gameSlug: null,
         },
         ready () {
-            // this.getVotes()
+            this.getVotes()
         }
     }
 </script>

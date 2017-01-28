@@ -3,6 +3,7 @@
 namespace App\Policies;
 
 use App\User;
+use App\Game;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class GamePolicy

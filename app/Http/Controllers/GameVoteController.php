@@ -10,7 +10,7 @@ class GameVoteController extends Controller
 {
 
     public function create(CreateVoteRequest $request, Game $game){
-        return $this->authorize('vote', $game);
+        $this->authorize('vote', $game);
 
         $game->voteFromUser($request->user())->delete();
 
@@ -23,7 +23,7 @@ class GameVoteController extends Controller
     }
 
     public function remove(Request $request, Game $game){
-        return $this->authorize('vote', $game);
+        $this->authorize('vote', $game);
 
         $game->voteFromUser($request->user())->delete();
 

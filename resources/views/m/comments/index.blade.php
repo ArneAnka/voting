@@ -1,7 +1,13 @@
 @extends('layouts.nesdb')
 
 @section('content')
-	<h1>comments on {{ $game->title }}, {{$game->console }}</h1>
+	<h1>comments on {{ $game->title }}, 
+	@if($game->console == 'nes')
+		<img src="{{ url('/') }}/images/nes.png" style="height: 24px; width: 50px;">
+	@else
+		<img src="{{ url('/') }}/images/snes.png" style="height: 24px; width: 50px;">
+	@endif
+	</h1>
 
 	<form action="{{ route('top.level', $game) }}" method="post">
 	{{ csrf_field() }}

@@ -42,7 +42,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/m/{game}/comment/{id}/delete', 'CommentController@delete');
 
 		// Votes //	
-	Route::get('/m/{game}/votes', 'GameVoteController@show'); //14:27
+	Route::get('/m/{game}/votes', 'GameVoteController@show'); //get votes
 	Route::post('/m/{game}/votes', 'GameVoteController@create');
 	Route::delete('/m/{game}/votes', 'GameVoteController@remove');
 	// Route::post('m/{game}/comment/{id}/upvote', 'CommentController@create');
