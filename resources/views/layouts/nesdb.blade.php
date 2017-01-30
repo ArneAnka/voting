@@ -23,6 +23,11 @@
 <body>
 <div id="app">
 	@include('partials._menu')
+    
+    @if (notify()->ready())
+        @include('partials._alert')
+    @endif
+
 	@yield('content')
 </div>
 <!-- Scripts -->

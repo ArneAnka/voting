@@ -8,7 +8,9 @@
 
 		<form action="{{ route('comment.store', [$game, $comment]) }}" method="post">
 		{{ csrf_field() }}
-			<textarea name="body" id="{{$comment->id}}" placeholder="please be nice">{{old('body')}}</textarea>
+			<textarea name="body" 
+			id="{{$comment->id}}" 
+			placeholder="please be nice">{{old('body')}}</textarea>
             @if ($errors->has('body'))
                 <span class="help-block">
                     <strong>{{ $errors->first('body') }}</strong><br>

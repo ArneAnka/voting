@@ -45,7 +45,11 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/m/{game}/votes', 'GameVoteController@show'); //get votes
 	Route::post('/m/{game}/votes', 'GameVoteController@create');
 	Route::delete('/m/{game}/votes', 'GameVoteController@remove');
-	// Route::post('m/{game}/comment/{id}/upvote', 'CommentController@create');
-	// Route::post('m/{game}/comment/{id}/downvote', 'CommentController@remove');
+	// Route::post('m/{game}/comment/{id}', 'CommentController@create');
+	// Route::delete('m/{game}/comment/{id}', 'CommentController@remove');
+
+		// favourite //
+	Route::post('/m/{game}/favourite', 'FavouriteController@create');
+	Route::delete('/m/{game}/favourite', 'FavouriteController@remove');
 
 });

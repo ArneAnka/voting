@@ -1,8 +1,9 @@
 <template>
     <div class="game__voting">
-        {{ up }} <a href="#" class="game__voting-button" @click.prevent="vote('up')">up</a> &nbsp;
-        {{ down }} <a href="#" class="game__voting-button" @click.prevent="vote('down')">down</a> &nbsp;
-        # comments
+        {{ up }} <a href="#" class="game__voting-button-up" v-bind:class="{'game__voting-button--voted-up': userVote == 'up'}" @click.prevent="vote('up')"><i class="fa fa-arrow-up" aria-hidden="true"></i></a> &nbsp;
+        {{ down }} <a href="#" class="game__voting-button-down" v-bind:class="{'game__voting-button--voted-down': userVote == 'down'}" @click.prevent="vote('down')"><i class="fa fa-arrow-down" aria-hidden="true"></i></a> &nbsp;
+        <i class="fa fa-comments" aria-hidden="true"></i> &nbsp; 
+        <i class="fa fa-star" aria-hidden="true"></i>
     </div>
 </template>
 

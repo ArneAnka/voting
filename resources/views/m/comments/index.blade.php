@@ -1,6 +1,7 @@
 @extends('layouts.nesdb')
 
 @section('content')
+
 	<h1>comments on {{ $game->title }}, 
 	@if($game->console == 'nes')
 		<img src="{{ url('/') }}/images/nes.png" style="height: 24px; width: 50px;">

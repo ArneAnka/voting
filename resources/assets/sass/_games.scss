@@ -1,3 +1,31 @@
 .game__listing {
 	margin-bottom: 10px;
 }
+
+.game__voting-button-up {
+	color:black;
+}
+
+.game__voting-button-down {
+	color:black;
+}
+
+.game__voting-button-up:hover {
+	color:green;
+}
+
+.game__voting-button-down:hover {
+	color:red;
+}
+
+.game__voting-button--voted-up {
+	color: green;
+}
+
+.game__voting-button--voted-down {
+	color: red;
+}
+
+.fa-star:hover {
+	color:#f4e0a2;
+}
