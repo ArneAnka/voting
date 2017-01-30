@@ -1,6 +1,13 @@
 # Laravel PHP Framework Simple Databse with voting and comments
 Trying to build a NES and SNES comment and voting system. But cant really get things to work.. :(
 
+# Install
+```sh
+$ npm install
+$ gulp
+```
+And ofc set up your `.env` file
+
 # Problems
 1. ~~Up and down votes doesn't appear under Title.~~
 2. When commenting, with validation, errors appear on all divs, should appear on that specefic comment.
